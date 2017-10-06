@@ -1,7 +1,17 @@
-# Cifrado César
+# Función Cifrado César
 
-###### Esta función permite cifrar y decifrar un texto.
+**Esta función consiste en la solicitud de un texto al usuario, el texto será sustituido por otro según el cifrado César. Cada letra del texto será reemplazada por otra que se encuentra en el número fijo de posiciones más adelantes en el alfabeto.  
+Para esta función solo se tiene en cuenta las 26 letras mayúsculas del alfabeto.**
 
+## Contenido  
+* Archivos adjuntos.  
+* Pseudocódigo de la función.  
+* Diagrama de flujo.  
+
+### Archivos adjuntos en repositorio
+1. **Carpeta app** contiene archivo app.js en el cuál se ecuentra el código de la función con el lenguaje Javascript.  
+2. **archivo index.html** está vinculado con app.js, el usuario podrá acceder a la función mediante este archivo.
+3. **README.md** contiene pseudocódigo de la función y diagrama de flujo.
 ## Pseudocódigo de la función Cifrado César
 
 * Inicio función Cifrado
