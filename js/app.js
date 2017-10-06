@@ -38,11 +38,10 @@ function cipher(){
   var returnDecipher =  confirm('¿Desea descifrar el texto cifrado?');
   // Si acepta, se muestra texto original.
   if(returnDecipher){
-    alert('Su texto original es: ' + phrase);
+    document.getElementById("demo").innerHTML = 'Su texto original es: ' + phrase;
   }
 }
 
-cipher();
 
 // Descifra un texto codificado por el cifrado César.
 function decipher(){
@@ -84,8 +83,6 @@ function decipher(){
   var returnCipher =  confirm('¿Desea cifrar el texto descifrado?');
   // Si acepta, se muestra texto cifrado.
   if(returnCipher){
-    alert('Su texto original es: ' + phrase);
+    document.getElementById("demo").innerHTML = 'Su texto original es: ' + phrase;
   }
 }
-
-decipher();

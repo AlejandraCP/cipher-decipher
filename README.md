@@ -77,4 +77,4 @@ Para esta función solo se tiene en cuenta las 26 letras mayúsculas del alfabet
 ## Diagrama de flujo de la función Cifrado  
 
 
-## Diagrama de flujo de la función Descifrado
+## Diagrama de flujo de la función Descifrado.
