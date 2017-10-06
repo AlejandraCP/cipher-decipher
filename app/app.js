@@ -6,9 +6,6 @@ function cipher(){
   var phraseToArray = phrase.toUpperCase().split('');
   // El array vacio, será nuevo array con los caracteres cifrados
   newArray = [];
-  var number;
-  var numberToLetter;
-  var returnDecipher;
 
   // Ciclo que itera por cada elemento del array phraseToArray.
   for(var i = 0; i < phraseToArray.length; i++){
@@ -24,13 +21,13 @@ function cipher(){
   // Ciclo que itera por cada elemento del array phraseToArray.
   for(var j = 0; j < phraseToArray.length; j++){
     // Obtiene el valor ASCII de caracter que remplaza al elemento.
-    number = ((phraseToArray[j].charCodeAt(0) - 65) + 33 % 26 + 65);
+    var number = ((phraseToArray[j].charCodeAt(0) - 65) + 33 % 26 + 65);
     // Si es mayor a 90 se disminuirá en 26 para solo obtener caracteres desde la A a la Z.
     if(number > 90){
         number -= 26;
     }
     // Convierte en caracter según valor numérico.
-    numberToLetter = String.fromCharCode(number);
+    var numberToLetter = String.fromCharCode(number);
     // Agrega el caracter al array.
     newArray.push(numberToLetter);
   }
@@ -38,7 +35,7 @@ function cipher(){
   // Muestra el texto cifrado en un string.
   alert('Su texto cifrado es: '+ newArray.join(''));
   // Da opción a descifrar el texto cifrado.
-  returnDecipher =  confirm('¿Desea descifrar el texto cifrado?');
+  var returnDecipher =  confirm('¿Desea descifrar el texto cifrado?');
   // Si acepta, se muestra texto original.
   if(returnDecipher){
     alert('Su texto original es: ' + phrase);
@@ -55,9 +52,6 @@ function decipher(){
   var phraseToArray = phrase.toUpperCase().split('');
   // El array vacio, será nuevo array con los caracteres cifrados
   newArray = [];
-  var number;
-  var numberToLetter;
-  var returnDecipher;
 
   // Ciclo que itera por cada elemento del array phraseToArray.
   for(var i = 0; i < phraseToArray.length; i++){
@@ -73,13 +67,13 @@ function decipher(){
   // Ciclo que itera por cada elemento del array phraseToArray.
   for(var j = 0; j < phraseToArray.length; j++){
     // Obtiene el valor ASCII de caracter que remplaza al elemento.
-    number = ((phraseToArray[j].charCodeAt(0) - 65) - 33 % 26 + 65);
+    var number = ((phraseToArray[j].charCodeAt(0) - 65) - 33 % 26 + 65);
     //Si es menor a 65 se suma 26 para solo obtener caracteres desde la A a la Z.
     if(number < 65){
         number = number + 26;
     }
     // Convierte en caracter según valor numérico.
-    numberToLetter = String.fromCharCode(number);
+    var numberToLetter = String.fromCharCode(number);
     // Agrega el caracter al array.
     newArray.push(numberToLetter);
   }
@@ -87,9 +81,9 @@ function decipher(){
   // Muestra el texto descifrado en un string.
   alert('Su texto descifrado es: '+ newArray.join(''));
   // Da opción a cifrar el texto descifrado.
-  returnDecipher =  confirm('¿Desea cifrar el texto descifrado?');
+  var returnCipher =  confirm('¿Desea cifrar el texto descifrado?');
   // Si acepta, se muestra texto cifrado.
-  if(returnDecipher){
+  if(returnCipher){
     alert('Su texto original es: ' + phrase);
   }
 }
