@@ -10,7 +10,8 @@ Para esta función solo se tiene en cuenta las 26 letras mayúsculas del alfabet
 
 ### Archivos adjuntos en repositorio
 1. **Carpeta app** contiene archivo app.js en el cuál se ecuentra el código de la función con el lenguaje Javascript.  
-2. **archivo index.html** está vinculado con app.js, el usuario podrá acceder a la función mediante este archivo.
+2. **archivo index.html** está vinculado con app.js, el usuario podrá acceder a la función mediante este archivo.  
+[link](file:///C:/Users/maria.DESKTOP-1MMFGAP/Desktop/cipher-decipher/index.html)
 3. **README.md** contiene pseudocódigo de la función y diagrama de flujo.
 ## Pseudocódigo de la función Cifrado
 
