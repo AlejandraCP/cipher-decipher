@@ -85,9 +85,9 @@ function decipher(){
   }
 
   // Muestra el texto descifrado en un string.
-  alert('Su texto cifrado es: '+ newArray.join(''));
+  alert('Su texto descifrado es: '+ newArray.join(''));
   // Da opción a cifrar el texto descifrado.
-  returnDecipher =  confirm('¿Desea descifrar el texto cifrado?');
+  returnDecipher =  confirm('¿Desea cifrar el texto descifrado?');
   // Si acepta, se muestra texto cifrado.
   if(returnDecipher){
     alert('Su texto original es: ' + phrase);
