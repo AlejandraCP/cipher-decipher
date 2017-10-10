@@ -1,7 +1,12 @@
-# Función Cifrado César
+# El repositorio contiene don funciones **cipher** y **deCipher**
 
-**Esta función consiste en la solicitud de un texto al usuario, el texto será sustituido por otro según el cifrado César. Cada letra del texto será reemplazada por otra que se encuentra en el número fijo de posiciones más adelantes en el alfabeto.  
-Para esta función solo se tiene en cuenta las 26 letras mayúsculas del alfabeto.**
+## Función cipher
+
+Esta función consiste en la solicitud de un texto al usuario, el texto será sustituido por otro según el cifrado César. Cada letra del texto será reemplazada por otra que se encuentra en el número fijo de posiciones más adelantes en el alfabeto.  
+
+## Función decipher  
+
+El usuario podrá descifrar el texto cifrado.
 
 ## Contenido  
 * Archivos adjuntos.  
@@ -11,71 +16,59 @@ Para esta función solo se tiene en cuenta las 26 letras mayúsculas del alfabet
 ### Archivos adjuntos en repositorio
 1. **Carpeta app** contiene archivo app.js en el cuál se ecuentra el código de la función con el lenguaje Javascript.  
 2. **archivo index.html** está vinculado con app.js, el usuario podrá acceder a la función mediante este archivo.  
-[link](file:///C:/Users/maria.DESKTOP-1MMFGAP/Desktop/cipher-decipher/index.html/)
-3. **README.md** contiene pseudocódigo de la función y diagrama de flujo.
-## Pseudocódigo de la función Cifrado
+<file:///C:/Users/maria.DESKTOP-1MMFGAP/Desktop/cipher-decipher/index.html/>
+3. **README.md** contiene pseudocódigo de la función y diagrama de flujo.  
+
+
+### Pseudocódigo de la función cipher
 
 * Inicio función Cifrado
   * phrase = Mostrar('Escribe el texto a cifrar:') : Solicita texto
-  * phraseToArray = phrase.convertir a mayúscula().separar e invertir orden('')
-  * Crear array vacio newArray = []  
+  * charValue = 0;
+  * cipherPhrase ='';
+  * para( i = 0; mientras i < phrase.longitud; i+1){  
+    * charValue = phrase.codigoASCII(i);
+    * Si (charValue >= 65 y charValue <= 90){
+      charValue = (charValue - 65 + 33) % 26 + 65  
+      charValue = String.delCaracter(charValue)
+      cipherPhrase = cipherPhrase+ charValue  
+    }
+    * si no (charValue>=97 y charValue<=122){  
+      charValue = (charValue - 97 + 33)%26+97  
+      charValue = String.delCaracter(charValue)  
+      cipherPhrase = cipherPhrase+ charValue  
+    }  
 
-	//Ciclo itera por cada elemento  
-  * para( i = 0; mientras i < longitud de phraseToArray; i+1)  
-    * si phraseToArray[i] = cadena vacia o phraseToArray[i] >= 0  
-      * phrase = Mostrar('El texto no debe contener espacios ni números,  
-      escribe la frase a cifrar').convertir a mayúscula().separar e invertir orden('')  
+    }   
+    Mostrar('El texto cifrado es: ' + cipherPhrase)
       Fin de ciclo  
-  * para( j = 0; mientras j < longitud de phraseToArray; j +1)  
-  //Se obtiene valor ASCII de caracter que reemplaza al elemento
-    * number = ((valor ASCII del elemento - 65) + 33 % 26 + 65)  
-      * si (number) > 90  
-          //Disminuye en 26 para solo obtener caracteres desde la A a la Z.
-        * number = number - 26  
-    * numberToLetter = letra según ASCII de valor(number)
-    * Agregar numberToLetter a newArray  
-    Fin de Ciclo  
 
-  * Mostrar ('Su texto cifrado es: '+ newArray.en string(''))  
-  * Preguntar('¿Desea descifrar el texto cifrado?')  
-    * si(acepta)  
-      * Mostrar('Su texto original es: ' + phrase)  
-* fin de la función  
-
-
-## Pseudocódigo de la función descifrado  
-
-
-* Inicio función Desifrado
-  * phrase = Mostrar('Escribe el texto a cifrar:') : Solicita texto
-  * phraseToArray = phrase.convertir a mayúscula().separar e invertir orden('')
-  * Crear array vacio newArray = []  
-
-  * para( i = 0; mientras i < longitud de phraseToArray; i+1)  
-    * si phraseToArray[i] = cadena vacia o phraseToArray[i] >= 0  
-      * phrase = Mostrar('El texto no debe contener espacios ni números,  
-      escribe la frase a cifrar').convertir a mayúscula().separar e invertir orden('')  
-      i = 0  
-      Fin de ciclo  
-  * para( j = 0; mientras j < longitud de phraseToArray; j +1)  
-  //Se obtiene valor ASCII de caracter que reemplaza al elemento
-    * number = ((valor ASCII del elemento - 65) - 33 % 26 + 65)  
-      * si (number) < 65  
-          //Aumenta en 26 para solo obtener caracteres desde la A a la Z.
-        * number = number + 26  
-    * numberToLetter = letra según ASCII de valor(number)
-    * Agregar numberToLetter a newArray  
-    Fin de Ciclo  
-
-  * Mostrar ('Su texto descifrado es: '+ newArray.en string(''))  
-  * Preguntar('¿Desea cifrar el texto descifrado?')  
-    * si(acepta)  
-      * Mostrar('Su texto original es: ' + phrase)  
 * fin de la función  
 
 
 
-## Diagrama de flujo de la función Cifrado  
+### Pseudocódigo de la función deCipher  
 
+* Inicio función decifrado
+  * phrase2 = Mostrar('Escribe el texto a cifrar:') : Solicita texto
+  * charValue2 = 0
+  * deCipherPhrase =''
+  * para( i = 0; mientras i < phrase2.longitud; i+1){  
+    * charValue2 = phrase2.codigoASCII(i);
+    * Si (charValue2 >= 65 y charValue2 <= 90){  
+      charValue2 = (charValue2 + 65 - 33) % 26 + 65  
+      charValue2 = String.delCaracter(charValue2)  
+      deCipherPhrase = deCipherPhrase + charValue2  
+    }
+    * si no (charValue2>=97 y charValue2<=122){  
+      charValue2 = (charValue2 + 97 - 45) % 26 + 97  
+      charValue2 = String.delCaracter(charValue2)  
+      cipherPhrase = cipherPhrase + charValue2  
+    }  
+
+    }   
+    Mostrar('El texto cifrado es: ' + cipherPhrase)  
+
+* fin de la función
 
 ## Diagrama de flujo de la función Descifrado.

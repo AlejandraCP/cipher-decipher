@@ -25,7 +25,7 @@ function cipher(){
      cipherPhrase = cipherPhrase+ charValue;
    }
  }
- return alert(cipherPhrase);
+ return alert('El texto cifrado es: ' + cipherPhrase);
 }
 
 // Descifra un texto codificado por el cifrado César.
@@ -50,7 +50,7 @@ function deCipher(){
      deCipherPhrase = deCipherPhrase+ charValue2;
    }
  }
-return alert(deCipherPhrase);
+return alert('El texto descifrado es: ' + deCipherPhrase);
 }
 
 cipher();
