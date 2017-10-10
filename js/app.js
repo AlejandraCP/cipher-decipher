@@ -14,7 +14,7 @@ function cipher(){
      charValue = (charValue - 65 + 33)%26+65;
      // Se obtiene caracterde nuevo valor según ASCII
      charValue = String.fromCharCode(charValue);
-     cipherPhrase = cipherPhrase+ charValue;
+     cipherPhrase += charValue;
    }
    // Si es mayor o igual a 97 y menor o igual a 122, letras minúsculas
    else if(charValue>=97 && charValue<=122){
@@ -47,7 +47,7 @@ function deCipher(){
    else if(charValue2 >= 97 && charValue2 <= 122){
      charValue2 = (charValue2 + 97 - 45)%26+97;
      charValue2 = String.fromCharCode(charValue2);
-     deCipherPhrase = deCipherPhrase+ charValue2;
+     deCipherPhrase += charValue2;
    }
  }
 return alert('El texto descifrado es: ' + deCipherPhrase);
