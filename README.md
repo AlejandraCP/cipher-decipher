@@ -1,4 +1,4 @@
-# El repositorio contiene don funciones **cipher** y **deCipher**
+# El repositorio contiene dos funciones **cipher** y **deCipher**
 
 ## Función cipher
 
@@ -70,5 +70,3 @@ El usuario podrá descifrar el texto cifrado.
     Mostrar('El texto cifrado es: ' + cipherPhrase)  
 
 * fin de la función
-
-## Diagrama de flujo de la función Descifrado.
