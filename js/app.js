@@ -1,88 +1,57 @@
 // Cifra un texto mediante el cifrado César.
 function cipher(){
   // Se obtiene el texto a cifrar.
-  var phrase = prompt('Escribe el texto a cifrar');
-  // phrase es convertida a masyúscula y en un array con caracteres separados.
-  var phraseToArray = phrase.toUpperCase().split('');
-  // El array vacio, será nuevo array con los caracteres cifrados
-  newArray = [];
-
-  // Ciclo que itera por cada elemento del array phraseToArray.
-  for(var i = 0; i < phraseToArray.length; i++){
-    // Si el elemento es un string vacio aparece nuevo prompt.
-    // Si el elemento parseado es >= a cero aparece nuevo prompt.
-    if(phrase[i] === ' ' || parseInt(phraseToArray[i]) >= 0){
-      phraseToArray = prompt('El texto no debe contener espacios ni números, \n escribe el texto a cifrar.').toUpperCase().split('');
-      // El valor de i debe regresar a cero para volver a iterar por cada caracter.
-      i = 0;
-    }
-  }
-
-  // Ciclo que itera por cada elemento del array phraseToArray.
-  for(var j = 0; j < phraseToArray.length; j++){
-    // Obtiene el valor ASCII de caracter que remplaza al elemento.
-    var number = ((phraseToArray[j].charCodeAt(0) - 65) + 33 % 26 + 65);
-    // Si es mayor a 90 se disminuirá en 26 para solo obtener caracteres desde la A a la Z.
-    if(number > 90){
-        number -= 26;
-    }
-    // Convierte en caracter según valor numérico.
-    var numberToLetter = String.fromCharCode(number);
-    // Agrega el caracter al array.
-    newArray.push(numberToLetter);
-  }
-
-  // Muestra el texto cifrado en un string.
-  alert('Su texto cifrado es: '+ newArray.join(''));
-  // Da opción a descifrar el texto cifrado.
-  var returnDecipher =  confirm('¿Desea descifrar el texto cifrado?');
-  // Si acepta, se muestra texto original.
-  if(returnDecipher){
-    document.getElementById("demo").innerHTML = 'Su texto original es: ' + phrase;
-  }
+ var phrase = prompt('Escribe el texto a cifrar');
+ var charValue = 0;
+ var cipherPhrase ='';
+ // Ciclo que itera por cada elemento de phrase.
+ for (var i = 0; i < phrase.length ; i++){
+   // Obtiene el valor ASCII del elemento.
+   charValue = phrase.charCodeAt(i);
+   // Si es mayor o igual a 65 y menor o igual a 90, letras mayúsculas
+   if (charValue >= 65 && charValue <= 90){
+     //Se obtiene nuevo valor ASCII
+     charValue = (charValue - 65 + 33)%26+65;
+     // Se obtiene caracterde nuevo valor según ASCII
+     charValue = String.fromCharCode(charValue);
+     cipherPhrase = cipherPhrase+ charValue;
+   }
+   // Si es mayor o igual a 97 y menor o igual a 122, letras minúsculas
+   else if(charValue>=97 && charValue<=122){
+     ////Se obtiene nuevo valor ASCII
+     charValue = (charValue - 97 + 33)%26+97;
+     //// Se obtiene caracterde nuevo valor según ASCII
+     charValue = String.fromCharCode(charValue);
+     cipherPhrase = cipherPhrase+ charValue;
+   }
+ }
+ return alert(cipherPhrase);
 }
-
 
 // Descifra un texto codificado por el cifrado César.
-function decipher(){
-  // Se obtiene el texto a cifrar.
-  var phrase = prompt('Escribe el texto a descifrar');
-  // phrase es convertida a masyúscula y en un array con caracteres separados.
-  var phraseToArray = phrase.toUpperCase().split('');
-  // El array vacio, será nuevo array con los caracteres cifrados
-  newArray = [];
-
-  // Ciclo que itera por cada elemento del array phraseToArray.
-  for(var i = 0; i < phraseToArray.length; i++){
-    // Si el elemento es un string vacio aparece nuevo prompt.
-    // Si el elemento parseado es mayor a cero aparece nuevo prompt.
-    if(phrase[i] === ' ' || parseInt(phraseToArray[i]) >= 0){
-      phraseToArray = prompt('El texto no debe contener espacios ni números, \n escribe la frase a cifrar.').toUpperCase().split('');
-      // El valor de i debe regresar a cero para volver a iterar por cada elemento.
-      i = 0;
-    }
-  }
-
-  // Ciclo que itera por cada elemento del array phraseToArray.
-  for(var j = 0; j < phraseToArray.length; j++){
-    // Obtiene el valor ASCII de caracter que remplaza al elemento.
-    var number = ((phraseToArray[j].charCodeAt(0) - 65) - 33 % 26 + 65);
-    //Si es menor a 65 se suma 26 para solo obtener caracteres desde la A a la Z.
-    if(number < 65){
-        number = number + 26;
-    }
-    // Convierte en caracter según valor numérico.
-    var numberToLetter = String.fromCharCode(number);
-    // Agrega el caracter al array.
-    newArray.push(numberToLetter);
-  }
-
-  // Muestra el texto descifrado en un string.
-  alert('Su texto descifrado es: '+ newArray.join(''));
-  // Da opción a cifrar el texto descifrado.
-  var returnCipher =  confirm('¿Desea cifrar el texto descifrado?');
-  // Si acepta, se muestra texto cifrado.
-  if(returnCipher){
-    document.getElementById("demo").innerHTML = 'Su texto original es: ' + phrase;
-  }
+function deCipher(){
+  // Se obtiene el texto a descifrar
+ var phrase2 = prompt('Escribe el texto a descifrar');
+ var charValue2 = 0;
+ var deCipherPhrase ='';
+ for (var i = 0; i < phrase2.length ; i++){
+   // Obtiene el valor ASCII del elemento.
+   charValue2 = phrase2.charCodeAt(i);
+   // Si es mayor o igual a 65 y menor o igual a 90
+   if (charValue2 >= 65 && charValue2 <= 90){
+   //
+   charValue2 = (charValue2 + 65 - 33)%26+65;
+   charValue2 = String.fromCharCode(charValue2);
+   deCipherPhrase = deCipherPhrase+ charValue2;
+   }
+   else if(charValue2 >= 97 && charValue2 <= 122){
+     charValue2 = (charValue2 + 97 - 45)%26+97;
+     charValue2 = String.fromCharCode(charValue2);
+     deCipherPhrase = deCipherPhrase+ charValue2;
+   }
+ }
+return alert(deCipherPhrase);
 }
+
+cipher();
+deCipher();
